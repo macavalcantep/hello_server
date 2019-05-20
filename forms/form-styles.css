@@ -1,0 +1,32 @@
+/* ADD-PC.HTML ############################################################################### */
+.add-pc {
+    border: solid 1px rgb(219, 217, 217);
+    -moz-box-shadow: 2px 2px 29px 1px rgba(64,64,64,3);
+    box-shadow: 2px 2px 29px 1px rgba(64,64,64,3);
+    margin-top: 50px;
+    padding: 30px;
+    width: 440px;
+    height: 350px;
+    margin: 50px auto;
+    
+}
+
+.add-pc input {
+    display: block;
+    margin: 0 auto 10px;
+    width: 400px;
+    height: 20px;;
+}
+
+/*Botões*/
+.m-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #00c0a8;
+    color: white;
+    border: solid 1px #00c0a8;
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+    
+}
