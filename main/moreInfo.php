@@ -30,8 +30,7 @@ $results = mysqli_fetch_array($result);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-        , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mais Informações</title>
     <link rel="stylesheet" href="/hello/css/bootstrap.css">
@@ -46,9 +45,18 @@ $results = mysqli_fetch_array($result);
      $ipToUpdate = $results['ip'];
     //  $resultPing = include("../functions/hostWindows.php");
 
+    $OS = PHP_OS;
+
+    if($OS == "Linux") {
+        ?>
+        <p class="ip">IP: <?= $results['ip'] ?> | Staus: <?php include("../functions/hostLinux.php"); ?></p>
+        <?php
+    } else {
+        ?>
+        <p class="ip">IP: <?= $results['ip'] ?> | Staus: <?php include("../functions/hostWindowsphp"); ?></p>
+        <?php
+    }
     ?>
-    
-    <p class="ip">IP: <?= $results['ip'] ?> | Staus: <?php include("../functions/hostWindows.php"); ?></p>
 
     <div class="table-infos">
         <table class="table table-striped">

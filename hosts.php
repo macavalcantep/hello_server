@@ -34,7 +34,7 @@ $time = mysqli_fetch_array($resultRefresh);
 <?php header("refresh: " . $time['refreshTime']); ?>
 
 <?php //VARIABLES
-$version = "0.1.190213"; //CLIENT VERSION
+$version = "1.0.190520"; //CLIENT VERSION
 ?>
 
 <?php //Get Time
