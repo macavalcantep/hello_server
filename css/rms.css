@@ -245,6 +245,71 @@ p {
     list-style: none;
 }
 
+/*#region downloadPage */
+
+#downloadTitle {
+    margin-top: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    text-align: center
+}
+
+.downloadPageContainer {
+    display: block;
+    width: 1500px;
+    margin: 140px auto;
+    text-align: center;
+    
+}
+
+.downloadWindows {
+    display: inline-block;
+    border: solid 2px rgb(82, 82, 82);
+    width: 500px;
+    height: 300px;
+    margin-right: 20px;
+    background-color: #4EC0A8;
+}
+
+.downloadWindows:hover {
+    background-color: #3C9688;
+    border: solid 1px white;
+}
+
+.downloadWindows p {
+    color: white;
+    margin-top: 120px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+ 
+
+.downloadLinux {
+    display: inline-block;
+    border: solid 2px rgb(82, 82, 82);
+    width: 500px;
+    height: 300px;
+    margin-left: 20px;
+    background-color: #4EC0A8;
+}
+
+.downloadLinux:hover {
+    background-color: #3C9688;
+    border: solid 1px white;
+}
+
+.downloadLinux p {
+    color: white;
+    margin-top: 120px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
+
+
+
+/*#endregion downloadPage*/
+
 
 
 
