@@ -53,7 +53,7 @@ $results = mysqli_fetch_array($result);
         <?php
     } else {
         ?>
-        <p class="ip">IP: <?= $results['ip'] ?> | Staus: <?php include("../functions/hostWindowsphp"); ?></p>
+        <p class="ip">IP: <?= $results['ip'] ?> | Staus: <?php include("../functions/hostWindows.php"); ?></p>
         <?php
     }
     ?>
