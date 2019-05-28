@@ -131,7 +131,7 @@ $total_intem = mysqli_num_rows($resultL);
     $versionInstaled = $macs['vClient'];
 
     if ($versionInstaled != $version && $versionInstaled != "manual") {
-       echo "<td title='Versão desuatalizada,nova versão: $version.' class='table-header'><font color='red'> $versionInstaled </font></td>";
+       echo "<td title='Versão desuatalizada, nova versão: $version.' class='table-header'><font color='red'> $versionInstaled </font></td>";
     } else if ($versionInstaled == $version || $versionInstaled == "manual") {
       echo "<td title='Versão mais recente' class='table-header'><font color='green'> $versionInstaled </font></td>";
     }
