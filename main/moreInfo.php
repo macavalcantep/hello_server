@@ -62,57 +62,31 @@ $results = mysqli_fetch_array($result);
         <table class="table table-striped">
             <tr>
                 <td>Processador:</td>
-                <form action="../functions/moreInfoAlterDB.php" method="GET">
-                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['processador'] ?>"></td>
-                <input id="input-text-forms" type="hidden" name="param" value="p">
-                <input id="input-text-forms" type="hidden" name="host"  value="<?=$host?>">
-                <td><input type="submit" value="Alterar"></td>
-                </form>
+                <td><?=$results['processador']?></td>
             </tr>
             <tr>
-                <td>Memória RAM:</td>
-                <form action="../functions/moreInfoAlterDB.php" method="GET">
-                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['ram'] ?>"></td>
-                <input type="hidden" name="param" value="r">
-                <input type="hidden" name="host"  value="<?=$host?>">
-                <td><input type="submit" value="Alterar"></td>
-                </form>
+                <td>Momoria RAM:</td>
+                <td><?=$results['ram']?></td>
             </tr>
             <tr>
                 <td>Numero Serial:</td>
-                <form action="../functions/moreInfoAlterDB.php" method="GET">
-                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['SN'] ?>"></td>
-                <input type="hidden" name="param" value="sn">
-                <input type="hidden" name="host"  value="<?=$host?>">
-                <td><input type="submit" value="Alterar"></td>
-                </form>
+                <td><?= $results['SN'] ?></td>
             </tr>
             <tr>
                 <td>Patrimônio:</td>
-                <form action="../functions/moreInfoAlterDB.php" method="GET">
-                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['patrimonio'] ?>"></td>
-                <input type="hidden" name="param" value="ptr">
-                <input type="hidden" name="host"  value="<?=$host?>">
-                <td><input type="submit" value="Alterar"></td>
-                </form>
-
+                <td><?=$results['patrimonio']?></td>
             </tr>
             <tr>
                 <td>AntiVirus:</td>
-                <form action="../functions/moreInfoAlterDB.php" method="GET">
-                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['AVirus'] ?>"></td>
-                <input type="hidden" name="param" value="av">
-                <input type="hidden" name="host"  value="<?=$host?>">
-                <td><input type="submit" value="Alterar"></td>
-                </form>
+                <td><?= $results['AVirus'] ?></td>
             </tr>
         </table>
     </div>
   
     
         <!-- Entrada de informaçao de Observação-->
-        <form action="/hello/functions/moreInfoAlterDB.php" method="GET">
-            <textarea class="moreInfo-txtarea" name="values" cols="80" rows="5"placeholder="Observações: <?= $results['observacao'] ?>"></textarea> 
+        <form action="../functions/moreInfoAlterDB.php?" method="GET">
+            <textarea class="moreInfo-txtarea" name="values" cols="70" rows="4"placeholder="Observações:<?= $results['observacao'] ?>"></textarea> 
             <!-- <input class="txt-in" type="text" name="values"> -->
             <input type="hidden" name="host" value="<?= $host ?>">
             <input type="hidden" name="param" value="obis">
