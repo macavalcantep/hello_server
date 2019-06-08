@@ -2,28 +2,20 @@
 <?php session_start(); ?>
 
 <?php
-
 if ($_SESSION['type'] == "a") {
-
 } elseif ($_SESSION['type'] == "u") {
-
 } else {
     header("location: /hello/error.php?id=0");
 }
-
 if ($_SESSION['status'] == "1") {
-
 } else {
     header("location: /hello/error.php?id=0");
 }
-
 $host = $_GET['host'];
-
 // Get IP from macs
 $query = "SELECT ip, processador, ram, SN, AVirus, patrimonio, observacao FROM macs WHERE hostname='$host'";
 $result = mysqli_query($connection, $query);
 $results = mysqli_fetch_array($result); 
-
 ?>
 
 <!DOCTYPE html>
@@ -40,13 +32,10 @@ $results = mysqli_fetch_array($result);
     <h1><?= $host ?></h1>
 
     <?php
-
      $hostnameToUpdate = $host;
      $ipToUpdate = $results['ip'];
     //  $resultPing = include("../functions/hostWindows.php");
-
     $OS = PHP_OS;
-
     if($OS == "Linux") {
         ?>
         <p class="ip">IP: <?= $results['ip'] ?> | Staus: <?php include("../functions/hostLinux.php"); ?></p>
@@ -62,31 +51,57 @@ $results = mysqli_fetch_array($result);
         <table class="table table-striped">
             <tr>
                 <td>Processador:</td>
-                <td><?=$results['processador']?></td>
+                <form action="../functions/moreInfoAlterDB.php" method="GET">
+                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['processador'] ?>"></td>
+                <input id="input-text-forms" type="hidden" name="param" value="p">
+                <input id="input-text-forms" type="hidden" name="host"  value="<?=$host?>">
+                <td><input class="m-btn" type="submit" value="Alterar"></td>
+                </form>
             </tr>
             <tr>
-                <td>Momoria RAM:</td>
-                <td><?=$results['ram']?></td>
+                <td>Memória RAM:</td>
+                <form action="../functions/moreInfoAlterDB.php" method="GET">
+                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['ram'] ?>"></td>
+                <input type="hidden" name="param" value="r">
+                <input type="hidden" name="host"  value="<?=$host?>">
+                <td><input class="m-btn" type="submit" value="Alterar"></td>
+                </form>
             </tr>
             <tr>
                 <td>Numero Serial:</td>
-                <td><?= $results['SN'] ?></td>
+                <form action="../functions/moreInfoAlterDB.php" method="GET">
+                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['SN'] ?>"></td>
+                <input type="hidden" name="param" value="sn">
+                <input type="hidden" name="host"  value="<?=$host?>">
+                <td><input class="m-btn" type="submit" value="Alterar"></td>
+                </form>
             </tr>
             <tr>
                 <td>Patrimônio:</td>
-                <td><?=$results['patrimonio']?></td>
+                <form action="../functions/moreInfoAlterDB.php" method="GET">
+                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['patrimonio'] ?>"></td>
+                <input type="hidden" name="param" value="ptr">
+                <input type="hidden" name="host"  value="<?=$host?>">
+                <td><input class="m-btn"  type="submit" value="Alterar"></td>
+                </form>
+
             </tr>
             <tr>
                 <td>AntiVirus:</td>
-                <td><?= $results['AVirus'] ?></td>
+                <form action="../functions/moreInfoAlterDB.php" method="GET">
+                <td><input id="input-text-forms" type="text" name="values" placeholder="<?= $results['AVirus'] ?>"></td>
+                <input type="hidden" name="param" value="av">
+                <input type="hidden" name="host"  value="<?=$host?>">
+                <td><input class="m-btn" type="submit" value="Alterar"></td>
+                </form>
             </tr>
         </table>
     </div>
   
     
         <!-- Entrada de informaçao de Observação-->
-        <form action="../functions/moreInfoAlterDB.php?" method="GET">
-            <textarea class="moreInfo-txtarea" name="values" cols="70" rows="4"placeholder="Observações:<?= $results['observacao'] ?>"></textarea> 
+        <form action="/hello/functions/moreInfoAlterDB.php" method="GET">
+            <textarea class="moreInfo-txtarea" name="values" cols="85" rows="5"placeholder="Observações: <?= $results['observacao'] ?>"></textarea> 
             <!-- <input class="txt-in" type="text" name="values"> -->
             <input type="hidden" name="host" value="<?= $host ?>">
             <input type="hidden" name="param" value="obis">
@@ -96,8 +111,3 @@ $results = mysqli_fetch_array($result);
 
 </body>
 </html>
-
-
-
-
-

@@ -2,7 +2,6 @@
 <?php session_start(); ?>
 
 <?php
-
 if($_SESSION['type'] == "a") {
     include("functions/header-adm.php");
     $lock_in = " ";
@@ -14,13 +13,11 @@ if($_SESSION['type'] == "a") {
 } else {
     header("location: /hello/error.php?id=0");
 }
-
 if($_SESSION['status'] == "1") {
     echo "<h2><i><font color='#1a1a1a'> Computadores </i></h2><br><br>";
 } else {
     header("location: /hello/error.php?id=0");
 } 
-
 ?>
 
 <?php
@@ -28,7 +25,6 @@ if($_SESSION['status'] == "1") {
 $queryRefresh = "SELECT refreshTime FROM config WHERE id='1'";
 $resultRefresh = mysqli_query($connection, $queryRefresh);
 $time = mysqli_fetch_array($resultRefresh);
-
 ?>
 
 <?php header("refresh: " . $time['refreshTime']); ?>
@@ -49,36 +45,25 @@ $maxDayFinal = mysqli_fetch_array($result);
 ?>
 
 <?php
-
 // Verify if a page is seted on get method.
 $page = (isset($_GET['page']))? $_GET['page'] : 1;
 $query = " select * from macs";
 $result = mysqli_query($connection, $query);
-
 // Cont total results
 $total_results = mysqli_num_rows($result);
-
-
 // Set item by page
 $query = "SELECT maxPage FROM config WHERE id='1'";
 $result = mysqli_query ( $connection, $query );
 $qtPage = mysqli_fetch_array($result);
 $pageQT = $qtPage['maxPage'];
-
-
-
 // Number of pages to show the results
 $page_nums = ceil($total_results / $pageQT);
 // Check begin page
 $begin = ($pageQT * $page) - $pageQT;
-
 // New select with limit
 $querL = " select * from macs limit $begin, $pageQT";
 $resultL = mysqli_query($connection, $querL);
-
 $total_intem = mysqli_num_rows($resultL);
-
-
 ?>
 
 
@@ -114,30 +99,20 @@ $total_intem = mysqli_num_rows($resultL);
     echo "<td><center>" . $macs['os'] . "</center></td>";
     echo "<td><center>" . $macs['user'] . "</center></td>";
     echo "<td><center>" . $macs['date'] . "</center></td>";
-
-
     $dOld = $macs['status'];
     $dNow = $day;
-
     if($dNow < $dOld || ($dNow - $dOld) > $maxDayFinal['maxDay']) {
-
       echo "<td title='Muitos dias sem utilização' class='table-header'><font color='red'> NO OK </font></td>";
-
     } else {
             echo "<td title='Atualizado recentemente' class='table-header'><font color='green'> OK </font></td>";
     }
-
     //VERIFY VERSION OF CLIENT INSTALED ON PCS
     $versionInstaled = $macs['vClient'];
-
     if ($versionInstaled != $version && $versionInstaled != "manual") {
-       echo "<td title='Versão desuatalizada,nova versão: $version.' class='table-header'><font color='red'> $versionInstaled </font></td>";
+       echo "<td title='Versão desuatalizada, nova versão: $version.' class='table-header'><font color='red'> $versionInstaled </font></td>";
     } else if ($versionInstaled == $version || $versionInstaled == "manual") {
       echo "<td title='Versão mais recente' class='table-header'><font color='green'> $versionInstaled </font></td>";
     }
-
-
-
 ?>
 
 
@@ -160,8 +135,6 @@ $total_intem = mysqli_num_rows($resultL);
         <?php
         $next = $page + 1;
         $previous = $page - 1;
-
-
         if($total_results == 0 ) {
           echo "Nenhum registro encontrado";
         } else { ?>

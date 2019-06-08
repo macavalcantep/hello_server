@@ -103,14 +103,11 @@ h1 {
 
 
 .table-infos {
-    width: 500px;
+    width: 550px;
     margin: 0 auto;
 }
 
-
-
-
-
-
-
-
+#input-text-forms {
+    width: 300px;
+    border: none;
+}
