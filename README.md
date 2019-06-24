@@ -1,4 +1,4 @@
 # Hello Iventory
 Hello iventory, é uma aplicação para gerenciamento integrado de computadores interligados em rede
 
-Versão Atual 1.0.190608
+Versão Atual 1.0 Alt. 190608
