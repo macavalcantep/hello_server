@@ -100,6 +100,25 @@ if($result4) {
     echo "<div class='alert-danger'><center><h1>Erro ao criar tabela ERRO: Table config.</h1></center></div>";
 }
 
+//Create table historic
+$query6 = "CREATE TABLE hello_hist (
+    id int AUTO_INCREMENT,
+    host varchar(100) NOT NULL,
+    hDate varchar(10) NOT NULL,
+    note varchar(256) NOT NULL,
+    author varchar(50) NOT NULL,
+    PRIMARY KEY(id));";
+    
+    
+    $result6 = mysqli_query($connectionHello, $query6);
+    
+    if($result6) {
+        echo "<div class='alert-success'><center><h1>Tabela de histórico criada !</h1></center></div>";
+    } else {
+        echo "<div class='alert-danger'><center><h1>Erro ao criar tabela ERRO: Table config.</h1></center></div>";
+    }
+    
+
 //Inset maxDay
 $query5 = "INSERT INTO config ( id, maxDay, refreshTime, maxPage ) VALUES (1, 1, 40, 10);";
 $result5 = mysqli_query($connectionHello, $query5);
