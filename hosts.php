@@ -71,7 +71,8 @@ $total_intem = mysqli_num_rows($resultL);
 
 <html>
     <body>
-        <table class="table table-striped table-hover table-condensed table-sm">
+    <script src="js/sortable.js"></script>
+        <table class="table table-striped table-hover table-condensed table-sm sortable">
 
         <?php // Verifica se tem permição para adicionar computadores
         if($_SESSION['type'] == "a") { ?>
