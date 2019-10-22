@@ -72,7 +72,22 @@ $total_intem = mysqli_num_rows($resultL);
 <html>
     <body>
     <script src="js/sortable.js"></script>
-        <table class="table table-striped table-hover table-condensed table-sm sortable">
+
+    <form action="/hello/main/searchPage.php" method="post">
+        <p>Pesquisar por:</p>
+        
+        <select name="searchSelect" id="searchSelet">
+            <option value="user">Nome de usuário</option>
+            <option value="ptr">Patrimônio</option>
+            <option value="host">Host Name</option>
+        </select>
+
+        <input type="text" name="taginput">
+        <input type="submit" value="Pesquisar">
+    </form>
+
+
+        <table class="table table-striped table-hover table-condensed table-sm sortable tableCos">
 
         <?php // Verifica se tem permição para adicionar computadores
         if($_SESSION['type'] == "a") { ?>
@@ -83,21 +98,26 @@ $total_intem = mysqli_num_rows($resultL);
         <?php } ?>
             
             <tr>
-                <th class="table-header">ID</th>
-                <th class="table-header">Hostname</th>
-                <th class="table-header">Sistema Operacional</th>
-                <th class="table-header">Usuário logado</th>
-                <th class="table-header">Data de login</th>
-                <th class="table-header">Status</th>
-                <th class="table-header">Versão hello</th>
+                <th data-field="id" class="table-header">ID</th>
+                <th data-field="ptr" class="table-header">PATRIMÔNIO</th>
+                <th data-field="host" class="table-header">HOSTNAME</th>
+                <th data-field="so" class="table-header">SO</th>
+                <th data-field="ram" class="table-header">RAM</th>
+                <th data-field="user" class="table-header">USUÁRIO LOGADO</th>
+                <th data-field="dlogin" class="table-header">DATA DE LOGIN</th>
+                <th data-field="status" class="table-header">STATUS</th>
+                <th data-field="cversion" class="table-header">VERSÃO DO CLIENTE</th>
                 <!-- <th class="table-header">On/Off</th> -->
-                <?php echo $lock_in ?> <th class="table-header">Opções</th> <?php echo $lock_out ?>
+                <?php echo $lock_in ?> <th class="table-header">OPÇÕES</th> <?php echo $lock_out ?>
             </tr>
+            <tbody>
             <?php while ($macs = mysqli_fetch_array($resultL)) {
     echo "<tr>";
     echo "<td><center>" . $macs['id'] . "</center></td>";
+    echo "<td><center>" . $macs['patrimonio'] . "</center></td>";
     echo "<td><center>" . $macs['hostname'] . "</center></td>";
     echo "<td><center>" . $macs['os'] . "</center></td>";
+    echo "<td><center>" . $macs['ram'] . "</center></td>";
     echo "<td><center>" . $macs['user'] . "</center></td>";
     echo "<td><center>" . $macs['date'] . "</center></td>";
     $dOld = $macs['status'];
@@ -131,8 +151,13 @@ $total_intem = mysqli_num_rows($resultL);
                 </center>
             </td>
             <?php } echo "</tr>"; ?>
-
+            <tbody>
         </table>
+
+
+
+
+
         <?php
         $next = $page + 1;
         $previous = $page - 1;

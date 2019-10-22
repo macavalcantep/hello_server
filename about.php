@@ -12,16 +12,10 @@
     <body>
         <center>
             <div>
-                Versão 1.0 - Beta
+                Versão 0.2019.10.22 - BETA
                 <br>
                 Desenvolvido por Marco Antonio Cavalcante<br>
                 macavalcantep@gmail.com
-                <br>
-                Tecnologias
-                <br>
-                # HTML <br>
-                # PHP 7.2.5<br>
-                # MYSQL 5.0.12<br>
             </div>
         </center>
     </body>

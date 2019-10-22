@@ -18,11 +18,10 @@
     <nav id="nav">
         <ul>
             <li title="Inicio"><a href="/hello/main/adm.php"><img width="20px" height="18px" src="/hello/img/buttons/home.png"></a></li>
-            <li><a href="/hello/hosts.php"><img width="20px" height="18px" src="/hello/img/buttons/pcs.png"></a></li>
-            <li title="Impressoras"><a href="/hello/main/impressoras.php"><img width="20px" height="18px" src="/hello/img/buttons/print.png"></a></li>
-            <li><a target="_blank" onClick="window.open('/hello/about.php','ping',' width=800,height=600')"><img width="20px" height="18px" src="/hello/img/buttons/about.png"></a></li>
-            <li><a href="/hello/error.php"><img width="20px" height="18px" src="/hello/img/buttons/exit.png"></a></li>
+            <li title="Computadores"><a href="/hello/hosts.php"><img width="20px" height="18px" src="/hello/img/buttons/pcs.png"></a></li>
+            <li title="Sobre"><a target="_blank" onClick="window.open('/hello/about.php','ping',' width=800,height=600')"><img width="20px" height="18px" src="/hello/img/buttons/about.png"></a></li>
+            <li title="Sair"><a href="/hello/error.php"><img width="20px" height="18px" src="/hello/img/buttons/exit.png"></a></li>
         </ul>
     </nav>
     <div class="container">
-        <div class="principal"> 
+        <div class="principal">

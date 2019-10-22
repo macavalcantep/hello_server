@@ -22,6 +22,7 @@
             <li title="Usuários"><a href="/hello/main/users.php"><img width="20px" height="18px" src="/hello/img/buttons/users.png"></a></li>
             <li title="Configurações"><a href="/hello/config.php"><img width="20px" height="18px" src="/hello/img/buttons/config.png"></a></li>
             <li title="Sobre"><a target="_blank" onClick="window.open('/hello/about.php','ping',' width=800,height=600')"><img width="20px" height="18px" src="/hello/img/buttons/about.png"></a></li>
+          
             <li title="Sair"><a href="/hello/error.php"><img width="20px" height="18px" src="/hello/img/buttons/exit.png"></a></li>
         </ul>
     </nav>
