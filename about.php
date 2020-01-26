@@ -12,7 +12,7 @@
     <body>
         <center>
             <div>
-                Versão 0.2019.10.22 - BETA
+                Versão 0.2020.01.26 - BETA
                 <br>
                 Desenvolvido por Marco Antonio Cavalcante<br>
                 macavalcantep@gmail.com

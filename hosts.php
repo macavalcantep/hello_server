@@ -73,7 +73,7 @@ $total_intem = mysqli_num_rows($resultL);
     <body>
     <script src="js/sortable.js"></script>
 
-    <form action="/hello/main/searchPage.php" method="post">
+    <!-- <form action="/hello/main/searchPage.php" method="post">
         <p>Pesquisar por:</p>
         
         <select name="searchSelect" id="searchSelet">
@@ -84,7 +84,7 @@ $total_intem = mysqli_num_rows($resultL);
 
         <input type="text" name="taginput">
         <input type="submit" value="Pesquisar">
-    </form>
+    </form> -->
 
 
         <table class="table table-striped table-hover table-condensed table-sm sortable tableCos">
@@ -123,7 +123,7 @@ $total_intem = mysqli_num_rows($resultL);
     $dOld = $macs['status'];
     $dNow = $day;
     if($dNow < $dOld || ($dNow - $dOld) > $maxDayFinal['maxDay']) {
-      echo "<td title='Muitos dias sem utilização' class='table-header'><font color='red'> NO OK </font></td>";
+      echo "<td title='Muitos dias sem utilização' class='table-header'><font color='red'> NOK </font></td>";
     } else {
             echo "<td title='Atualizado recentemente' class='table-header'><font color='green'> OK </font></td>";
     }
@@ -139,6 +139,11 @@ $total_intem = mysqli_num_rows($resultL);
 
             <td>
                 <center>
+                <!-- <?php echo $lock_in ?>
+                      <a href="main/hist_s.php?host=<?=$macs['hostname']?>">
+                    <img src="img/buttons/historic.png" title="Historico"></a>
+                    <?php echo $lock_out ?> -->
+
                 <?php echo $lock_in ?>
                       <a target="_blank" onClick="window.open('main/moreInfo.php?host=<?=$macs['hostname']?>','ping',' width=900 height=700')">
                     <img src="img/buttons/info.png" title="Mais informaçõesr"></a>
@@ -147,6 +152,10 @@ $total_intem = mysqli_num_rows($resultL);
                     <?php echo $lock_in ?>
                       <a target="_blank" onClick="window.open('functions/removeDbRegisters.php?p=dm','ping',' width=600,height=250')">
                     <img src="img/buttons/delete.png" title="Remover computador"></a>
+                    <?php echo $lock_out ?>
+                    <?php echo $lock_in ?>
+                      <a target="_blank" onClick="window.open('hist/hist_index.php?host=<?=$macs['hostname']?>','ping',' width=800,height=600')">
+                    <img src="img/buttons/historic.png" title="Histórico"></a>
                     <?php echo $lock_out ?>
                 </center>
             </td>

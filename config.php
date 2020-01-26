@@ -78,9 +78,8 @@ $MaxPage = mysqli_fetch_array($resultMaxPage);
             <tr>
                 <td><br>
                     <select name="maxPage" form="maxPageForm" title="Quantida de paginas a ser exibida na pagina de computadores">
-                        <option value="10">10</option>
-                        <option value="15">15</option>
                         <option value="20">20</option>
+                        <option value="50">50</option>
                     </select>
                     <input class="m-btn"type="submit" name="salvar" value="salvar">
                 </td>
